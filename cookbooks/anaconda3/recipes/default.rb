@@ -33,6 +33,7 @@ end
 bash 'configure anaconda ' do
   code <<-EOH
   export PATH=$HOME/apps/anaconda3/bin:$PATH
+  jupyter notebook --generate-config
 echo -e "c = get_config() \nc.NotebookApp.certfile = u'$HOME/apps/anaconda3/certs/mycert.pem' \nc.NotebookApp.keyfile = u'$HOME/apps/anaconda3/certs/mycert.key' \nc.NotebookApp.ip = '*' \nc.NotebookApp.open_browser = False \nc.NotebookApp.port = 8888 \n" >> $HOME/.jupyter/jupyter_notebook_config.py
   EOH
   action :run
