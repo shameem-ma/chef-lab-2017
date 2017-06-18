@@ -40,7 +40,7 @@ end
 
 bash 'start anaconda ' do
   code <<-EOH
-  jupyter notebook &> /dev/null &
+  jupyter notebook --allow-root &> /dev/null &
   EOH
   action :run
 end
