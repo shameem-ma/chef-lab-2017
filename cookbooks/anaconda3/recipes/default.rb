@@ -4,10 +4,11 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 #
-bash 'run anaconda installer' do
+bash 'pre-req-packages' do
   code <<-EOH
-  curl -O https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
-  bash Anaconda3-4.4.0-Linux-x86_64.sh -b -f -p ~/apps/anaconda3
+  yum update -y
+  yum groupinstall 'Development Tools' -y
+  yum install java bzip2 zip -y 
   EOH
   action :run
 end
