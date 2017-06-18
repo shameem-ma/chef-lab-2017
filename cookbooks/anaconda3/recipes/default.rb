@@ -7,7 +7,7 @@
 bash 'run anaconda installer' do
   code <<-EOH
   curl -O https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
-  bash Anaconda3-4.4.0-Linux-x86_64.sh -b -f -p ~/apps/anaconda3
+  bash Anaconda3-4.4.0-Linux-x86_64.sh -b -f -p $HOME/apps/anaconda3
   EOH
   action :run
 end
